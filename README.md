@@ -1,2 +1,2 @@
 # mokojin
-Getting Strated With GitHub
+This is just a check
