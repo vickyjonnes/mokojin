@@ -1,2 +1,2 @@
 # mokojin
-This is just a check
+Finally updated something in the repository. Looking forward to update this frequently.
