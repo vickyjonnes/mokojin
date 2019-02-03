@@ -11,7 +11,8 @@ public class FunctionalInterfaceTest {
 	public static void main(String[] args) {
 		sayHello("Faizan",(par)->"Say Hi to "+par).ifPresent(System.out::println);
 		sayHello1("Faizan",(par)->"Say Hi to "+par).ifPresent(System.out::println);
-		generatFibonacci(new int[] {0,1}).forEach(System.out::println);
+		System.out.println("Below is fibonacci series");
+		generatFibonacci(new int[] {0,1}).forEach((num)->System.out.print(num+" "));
 	}
 	
 	public static Optional<String> sayHello(String name, Function<String,String> greet) {
