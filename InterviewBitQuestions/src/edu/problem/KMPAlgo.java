@@ -79,7 +79,7 @@ public class KMPAlgo {
 			}
 		}
 		
-		if((n-prefix)%prefix==0) {
+		if(n%(n-prefix)==0) {
 			System.out.println("Substring: "+s.substring(0,n-prefix)+" of length "+(n-prefix));
 			return true;
 		}
