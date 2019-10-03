@@ -18,27 +18,17 @@ public class UserComparator implements Comparator<User>{
 		int secondPrefered=0;
 		if(user.getSex().equals(u1.getSex())) {
 			firstPreferred--;
-			if(user.getSex().equals(u2.getSex())) {
-				secondPrefered--;
-				if(agePreference(u1, u2)>0) firstPreferred++;
-				else if(agePreference(u1, u2)<0) secondPrefered++;
-			}else {
-				secondPrefered++;
-				if(agePreference(u1, u2)>0) firstPreferred++;
-				else if(agePreference(u1, u2)<0) secondPrefered++;
-			}
 		}else {
 			firstPreferred++;
-			if(user.getSex().equals(u2.getSex())) {
-				secondPrefered--;
-				if(agePreference(u1, u2)>0) firstPreferred++;
-				else if(agePreference(u1, u2)<0) secondPrefered++;
-			}else {
-				secondPrefered++;
-				if(agePreference(u1, u2)>0) firstPreferred++;
-				else if(agePreference(u1, u2)<0) secondPrefered++;
-			}
 		}
+		if(user.getSex().equals(u2.getSex())) {
+			secondPrefered--;
+		}else {
+			secondPrefered++;
+		}
+		if(agePreference(u1, u2)>0) firstPreferred++;
+		else if(agePreference(u1, u2)<0) secondPrefered++;
+		
 		if(firstPreferred>secondPrefered) {
 			return -1;
 		}else if(firstPreferred<secondPrefered) {
