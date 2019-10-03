@@ -3,8 +3,8 @@ package edu.problem;
 public class SubarraysWithMOddNumbers {
 
 	public static void main(String[] args) {
-		int t[]=new int[] {1,2,3,4,5};
-		System.out.println(beautifulSubarrays(t, 1));
+		int t[]=new int[] {1,2,3,4,5,6,7,8,9,10};
+		System.out.println(beautifulSubarrays(t, 3));
 	}
 
 	static long beautifulSubarrays(int[] a, int m) {
