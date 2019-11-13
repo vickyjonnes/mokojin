@@ -43,14 +43,14 @@ public class StackToGetMaxNumber {
 	public int pop() {
 		if(stack.empty())
 			return Integer.MIN_VALUE;
-		int element=stack.pop();
-		if(element>max) {
+		int x=stack.pop();
+		if(x>max) {
 			int temp=max;
-			max=2*max-element;
+			max=2*max-x;
 			return temp;
 		}
 		else
-			return element;
+			return x;
 	}
 	
 	public int getMax() {
