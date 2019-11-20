@@ -5,7 +5,12 @@ public class IslandCount {
 	//https://www.geeksforgeeks.org/find-number-of-islands/
 	//https://www.youtube.com/watch?v=o8S2bO3pmO4
 	public static void main(String[] args) {
-		int matrix[][]=new int[][]{{1,1,0,0,0},{0,1,0,0,1},{1,0,0,1,1},{0,0,0,0,0},{1,0,1,0,1}};
+		int matrix[][]=new int[][]{{1,1,0,0,0},
+									{0,1,0,0,1},
+									{1,0,0,1,1},
+									{0,0,0,0,0},
+									{1,0,1,0,1}};
+									
 		System.out.println(getCount(matrix));
 	}
 	
