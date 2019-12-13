@@ -1,4 +1,4 @@
-package edu.problem;
+package edu.problem.buysellstock;
 
 import java.util.stream.IntStream;
 
