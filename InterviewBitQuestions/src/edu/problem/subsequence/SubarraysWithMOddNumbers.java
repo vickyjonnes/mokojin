@@ -1,4 +1,4 @@
-package edu.problem;
+package edu.problem.subsequence;
 
 public class SubarraysWithMOddNumbers {
 

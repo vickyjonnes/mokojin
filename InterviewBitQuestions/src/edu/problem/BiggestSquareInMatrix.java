@@ -10,8 +10,12 @@ public class BiggestSquareInMatrix {
 								  {1,1,1,1,0},
 								  {1,1,1,1,0},
 								  {0,0,0,0,0}};
+		int mat1[][]=new int[][] {{1,1,1},{0,0,0}};
 	
-	System.out.println(getMaxSquareSize(mat));
+		System.out.println(getMaxSquareSize(mat));
+	
+		System.out.println(getMaxSquareSize(mat1));
+	
 	}
 	
 	

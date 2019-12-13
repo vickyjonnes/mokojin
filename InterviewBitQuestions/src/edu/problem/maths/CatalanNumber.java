@@ -1,4 +1,4 @@
-package edu.problem;
+package edu.problem.maths;
 
 import java.util.stream.IntStream;
 
