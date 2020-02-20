@@ -11,7 +11,10 @@ public class RemoveBracketsToMakeStringBalanced {
 	public static void main(String[] args) {
 		RemoveBracketsToMakeStringBalanced bpr=new RemoveBracketsToMakeStringBalanced();
 		String str="()())()";
+		String str1="(()(";
 		bpr.removeBracketsAndPrintBalancedString(str);
+		System.out.println();
+		bpr.removeBracketsAndPrintBalancedString(str1);
 	}
 	
 	public boolean isValidString(String str) {

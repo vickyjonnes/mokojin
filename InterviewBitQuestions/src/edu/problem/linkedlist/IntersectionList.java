@@ -43,7 +43,7 @@ public class IntersectionList {
 		int k=0;
 		if(l1>=l2) {
 			while(ptr1!=null) {
-				if(ptr1.value==ptr1.value)
+				if(ptr2.value==ptr1.value)
 					return ptr1;
 				if(l1-l2<=k) {
 					ptr2=ptr2.next;

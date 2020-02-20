@@ -18,6 +18,11 @@ public class LoopList {
 		
 		if(isLoop(head))
 			System.out.println(isLoop(removeLoop(head)));
+		Node t=head;
+		while(t!=null) {
+			System.out.print(t.value+" ");
+			t=t.next;
+		}
 
 	}
 	

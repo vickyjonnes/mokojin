@@ -22,6 +22,9 @@ public class KMPAlgo {
 		
 		String text3="ababab";
 		System.out.println("Substring present: "+isSubstringPresent(text3));
+		
+		String text4="aaaab";
+		System.out.println("Substring present: "+isSubstringPresent(text4));
 	}
 	
 	//to create a lps array for largest prifix and suffix in the pattern itself o(m)
