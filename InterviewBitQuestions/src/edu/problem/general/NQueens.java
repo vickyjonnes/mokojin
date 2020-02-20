@@ -1,7 +1,8 @@
 package edu.problem.general;
 
 public class NQueens {
-
+//https://www.youtube.com/watch?v=jJPtLzq1E-Y
+//https://www.youtube.com/watch?v=xouin83ebxE
 	public static void main(String[] args) {
 		int n=4;
 		Position p[]=new Position[n];
