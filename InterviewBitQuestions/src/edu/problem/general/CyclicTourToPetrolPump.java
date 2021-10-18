@@ -12,7 +12,7 @@ public class CyclicTourToPetrolPump {
 		a[2]=new PetrolPump(6,5);
 		a[3]=new PetrolPump(7,3);
 		a[4]=new PetrolPump(4,5);
-		System.out.println(getStartPoint(a));
+		System.out.println(getStart(a));
 		
 		
 		PetrolPump a1[]=new PetrolPump[4];
@@ -20,7 +20,7 @@ public class CyclicTourToPetrolPump {
 		a1[1]=new PetrolPump(3,7);
 		a1[2]=new PetrolPump(4,7);
 		a1[3]=new PetrolPump(7,5);
-		System.out.println(getStartPoint(a1));
+		System.out.println(getStart(a1));
 	}
 	
 	
@@ -47,6 +47,33 @@ public class CyclicTourToPetrolPump {
 		return start;
 	}
 
+
+	//single iteration approach. first we will convert the array of coardinates into the array of numbers by (petrol-distance).
+	// then we will traverse from 0 and keep on adding the next element. If the sum become -ve at any point we will keep the value
+	//in a variable called balance then start from the next index. at the end if total sum + balance >0 then we will print the start
+	//index else there is no starting index
+	public static int getStart(PetrolPump pumps[]){
+		int a[]=new int[pumps.length];
+		for(int i=0;i<pumps.length; i++){
+			a[i]=pumps[i].petrol-pumps[i].distance;
+		}
+		int balance = 0;
+		int start=0;
+		int sum=0;
+		for(int i=0;i<a.length; i++){
+			sum = sum+a[i];
+			if(sum<0){
+				balance=balance+sum;
+				sum=0;
+				start=i+1;
+			}
+		}
+		if(sum+balance>=0){
+			return start;
+		}else{
+			return -1;
+		}
+	}
 }
 
 class PetrolPump{

@@ -4,8 +4,8 @@ import java.util.stream.IntStream;
 
 /*
  * A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous.
- * input: “ABCDGH” and “AEDFHR” 
- * output: “ADH” of length 3
+ * input: ABCDGH and AEDFHR
+ * output: ADH of length 3
 */
 public class LongestCommonSubsequence {
 
