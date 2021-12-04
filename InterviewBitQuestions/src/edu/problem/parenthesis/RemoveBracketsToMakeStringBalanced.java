@@ -11,56 +11,38 @@ public class RemoveBracketsToMakeStringBalanced {
 	public static void main(String[] args) {
 		RemoveBracketsToMakeStringBalanced bpr=new RemoveBracketsToMakeStringBalanced();
 		String str="()())()";
-		String str1="(()(";
-		bpr.removeBracketsAndPrintBalancedString(str);
+		String str1="()((";
+		String str2="))((";
+		System.out.println(doBalance(str));
 		System.out.println();
-		bpr.removeBracketsAndPrintBalancedString(str1);
+		System.out.println(doBalance(str1));
+		System.out.println(doBalance(str2));
 	}
-	
-	public boolean isValidString(String str) {
-		if(str=="" || str ==null)
-			return false;
+
+	public static String doBalance(String str){
+		StringBuilder sb = new StringBuilder();
 		int count=0;
-		for(int i=0;i<str.length();i++) {
-			if("(".equals(str.charAt(i)+"")) {
+		for(int i=0;i<str.length(); i++){
+			if(str.charAt(i)=='('){
+				sb.append(str.charAt(i));
 				count++;
-			}else {
-				count--;
-			}
-			if(count<0)
-				return false;
-		}
-		return count==0?true:false;
-	}
-	
-	public void removeBracketsAndPrintBalancedString(String str) {
-		HashSet<String> visited=new HashSet<>();
-		Queue<String> q=new LinkedList<>();
-		q.add(str);
-		visited.add(str);
-		String temp;
-		boolean level=false;
-		while(!q.isEmpty()) {
-			String s=q.poll();
-			if(isValidString(s)) {
-				System.out.println(s);
-				level=true;
-			}
-			if(level)
-				continue;
-			else {
-				for(int i=0;i<s.length();i++) {
-					if(s.charAt(i)=='(' || s.charAt(i)==')') {
-						temp=s.substring(0, i)+s.substring(i+1);
-						if(!visited.contains(temp)) {
-							q.add(temp);
-							visited.add(temp);
-						}
-					}
+			}else if(str.charAt(i)==')'){
+				if(count>0){
+					sb.append(str.charAt(i));
+					count--;
 				}
 			}
 		}
-		
+		StringBuilder result = new StringBuilder();
+
+		for(int i=sb.length()-1; i>=0; i--){
+			if(sb.charAt(i)=='(' && count > 0){
+				count--;
+			}else{
+				result.append(sb.charAt(i));
+			}
+		}
+		return result.reverse().toString();
 	}
 
 }

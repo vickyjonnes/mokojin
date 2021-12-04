@@ -54,4 +54,31 @@ public class LongestCommonSubsequence {
 		return build.reverse().toString();
 	}
 
+	public static int lengthOfCommonSubsequence(String first, String second){
+		int n = first.length();
+		int m = second.length();
+		int mat[][]=new int[n][m];
+
+		for(int i=0;i<n; i++){
+			for(int j=0;j<m;j++){
+				if(i==0 && j==0){
+					if(first.charAt(i)==second.charAt(j))
+						mat[i][j]=1;
+					else
+						mat[i][j]=0;
+				}else{
+					if(first.charAt(i)==second.charAt(j)){
+						int dia = (i-1>=0 && j-1>=0) ? mat[i-1][j-1] : 0;
+						mat[i][j] = 1+dia;
+					}else{
+						int top = (i-1)>=0 ? mat[i-1][j] : 0;
+						int left = (j-1)>=0 ? mat[i][j-1] : 0;
+						mat[i][j] = Math.max(top, left);
+					}
+				}
+			}
+		}
+		return mat[n-1][m-1];
+	}
+
 }

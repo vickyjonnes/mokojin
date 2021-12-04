@@ -8,14 +8,14 @@ public class Sort012 {
 	// one will start from start one from mid and one from end. start will increase if 0 is found, mid will increase if 1 is found
 	// and end will decrease when 2 is found.
 	public static void main(String[] args) {
-		int a[]=new int[] {0, 1, 2, 0, 1, 2};
+		int a[]=new int[] {0,1,1,0,2,0,2,1};
 		sortArray(a);
 
 	}
 	
 	public static void sortArray(int a[]) {
 		int start=0, mid=0,end=a.length-1;
-		
+
 		while(mid<=end) {
 			int temp;
 			if(a[mid]==0) {
@@ -32,7 +32,7 @@ public class Sort012 {
 				end--;
 			}
 		}
-		
+
 		for(int i=0;i<a.length;i++) {
 			System.out.print(a[i]+" ");
 		}

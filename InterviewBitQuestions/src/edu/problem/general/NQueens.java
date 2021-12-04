@@ -13,20 +13,19 @@ public class NQueens {
 	}
 	
 	public static boolean findPosition(Position position[],int row,int n) {
-		int col=0;
 		if(n==row)
 			return true;
-		for(col=0;col<n;col++) {
+		for(int col=0;col<n;col++) {
 			position[row]=new Position(row,col);
 			if(isSafe(position, row, col) && findPosition(position, row+1, n)) {
 				return true;
 			}else {
 				position[row]=null;
 			}
-			
+
 		}
 		return false;
-		
+
 	}
 	
 	public static boolean isSafe(Position ps[], int row, int col) {

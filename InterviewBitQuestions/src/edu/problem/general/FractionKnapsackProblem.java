@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class FractionKnapsackProblem {
 
 	//https://www.geeksforgeeks.org/fractional-knapsack-problem/
+	//https://www.youtube.com/watch?v=oTTzNMHM05I
 	//the best way to solve this problem is greedy approach, and identify the profit/weight value
 	public static void main(String[] args) {
 		int w[]= new int[] {2,3,5,7,1,4,1};
