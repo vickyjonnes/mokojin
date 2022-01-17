@@ -12,8 +12,8 @@ public class AllSubsets {
     public static void main(String arr[]){
         int input[]=new int[]{1,2};
         int subset[] = new int[input.length];
-       // printAllSubsets(new int[]{1,2},subset, 0);
-        printIterative(new int[]{1,3,5,7});
+        printAllSubsets(new int[]{1,2},subset, 0);
+        //printIterative(new int[]{1,3,5,7});
     }
 
     //recurrsive method

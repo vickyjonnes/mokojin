@@ -1,5 +1,7 @@
 package edu.problem.general;
 
+import java.util.Arrays;
+
 //https://www.youtube.com/watch?v=J2eoCvk59Rc
 //https://www.geeksforgeeks.org/coin-change-dp-7/
 public class CoinChange {
@@ -15,6 +17,13 @@ public class CoinChange {
         int coins2[] = {1,2,3};
         int sum2 = 6;
         System.out.println("Total ways=>"+ countTotalWays(coins2, coins2.length-1, sum2, createDP(coins2, sum2)));
+
+        int coins3[] = {7,5,1};
+        int sum3 = 18;
+        int dp[] = new int[sum3+1];
+        Arrays.fill(dp, -1);
+        dp[0]=0;
+        System.out.println(getMinCoin(sum3, coins3, dp));
     }
 
     public static int countMinCoins(int coins[], int sum){
@@ -65,5 +74,24 @@ public class CoinChange {
             }
         }
         return dp;
+    }
+
+    //recurrsive solution to get minimum coins to make desired sum
+    public static int getMinCoin(int sum, int coins[], int dp[]){
+        if(sum==0) return 0;
+        int ans = Integer.MAX_VALUE;
+        for(int i=0;i<coins.length; i++){
+            int subAns=0;
+            if(sum-coins[i]>=0){
+                if(dp[sum-coins[i]]!=-1)
+                    subAns = dp[sum-coins[i]];
+                else
+                    subAns = getMinCoin(sum-coins[i], coins, dp);
+
+                ans = Math.min(ans, 1+subAns);
+            }
+        }
+        dp[sum]=ans;
+        return ans;
     }
 }
